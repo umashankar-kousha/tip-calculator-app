@@ -13,10 +13,10 @@ let perPersonEl = document.getElementById("perPerson");
 formEl.addEventListener("submit", (event) => {
   event.preventDefault();
   let valid = true;
-  let billAmount = parseInt(billAmountEl.value);
+  let billAmount = parseFloat(billAmountEl.value);
 
-  let tipPercentage = parseInt(tipPercentageEl.value);
-  let persons = parseInt(numberOfPersonsEl.value);
+  let tipPercentage = parseFloat(tipPercentageEl.value);
+  let persons = parseFloat(numberOfPersonsEl.value);
 
   if (
     billAmount == "" ||
@@ -54,5 +54,7 @@ formEl.addEventListener("submit", (event) => {
 });
 
 formEl.addEventListener("reset", function (event) {
-  event.preventDefault();
+  tipEl.textContent = "XX.XX";
+  totalEl.textContent = "XX.XX";
+  perPersonEl.textContent = "XX.XX";
 });
