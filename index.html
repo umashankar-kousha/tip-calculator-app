@@ -11,24 +11,64 @@
     <div class="bg-container">
       <div class="card">
         <h1>Tip Calculator</h1>
-        <form action="">
-          <input type="text" placeholder="Bill Amount" class="bill-amount" />
-          <input type="text" placeholder="Tip %" class="tip" />
-          <select name="Currency" id="" class="drop-down">
-            <option value="inr">&#8377;</option>
+        <form action="" id="form">
+          <div id="billAmountContainer">
+            <input
+              type="text"
+              placeholder="Bill Amount"
+              class="bill-amount"
+              id="billAmount"
+            />
+          </div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: self-start;
+              align-self: center;
+              width: 95%;
+            "
+            id="tipContainer"
+          >
+            <div>
+              <input
+                type="text"
+                placeholder="Tip %"
+                class="tip"
+                id="tipPercentage"
+              />
+            </div>
+            <select name="Currency" id="currency" class="drop-down">
+              <option value="&#8377;">&#8377;</option>
 
-            <option value="usd">&#36;</option>
-            <option value="eur">&#8364;</option>
-          </select>
-          <input type="text" placeholder="Number Of Persons" class="persons" />
-          <button class="calculate-tip-btn">Calculate Tip</button>
-          <button class="reset">Reset</button>
+              <option value="&#36;">&#36;</option>
+              <option value="&#8364;">&#8364;</option>
+            </select>
+          </div>
+          <div id="numberOfpersonsContainer">
+            <input
+              type="text"
+              placeholder="Number Of Persons"
+              class="persons"
+              id="numberOfPersons"
+            />
+          </div>
+          <div>
+            <button
+              class="calculate-tip-btn"
+              id="calculateTipBtn"
+              type="submit"
+            >
+              Calculate Tip
+            </button>
+            <button class="reset" id="resetBtn">Reset</button>
+          </div>
         </form>
         <div class="result-container">
-          <p>Tip: <span>RXX.XX</span></p>
-          <p>Total:RXX:XX</p>
+          <p>Tip: <span id="tip">RXX.XX</span></p>
+          <p>Total: <span id="total">RXX:XX</span></p>
         </div>
-        <p>Per Person:RXX.XX</p>
+        <p>Per Person: <span id="perPerson">RXX.XX</span></p>
 
         <script src="./app.js"></script>
       </div>
